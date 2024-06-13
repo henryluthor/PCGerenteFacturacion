@@ -17,12 +17,16 @@
         <div>SE GENERO FACTURA</div>
     } *@
 
-    @* <div class="modal" id="successModal">
-        <div class="modal-content">
-            <p>Invoice submitted successfully</p>
-            <button id="printInvoiceBtn">Print invoice</button>
-        </div>
-    </div> *@
+    <div class="modal" id="responseModal" tabindex="-1" role="dialog" aria-labelledby="responseModal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <p>Invoice submitted successfully</p>
+                    <button id="printInvoiceBtn">Print invoice</button>
+                </div>                
+            </div>
+        </div>        
+    </div>
 
     <partial name="_InvoiceDetail"></partial>
 
@@ -128,7 +132,9 @@
                 var x = 1;
                 // var genResp = new GenericResponse;
                 console.log(response);
-                alert(response.message);
+                // alert(response.message);
+                // $('#responseModal').modal('show');
+                $('#responseModal').modal('toggle');
             },
             error: function (xhr, status, error) {
                 alert("Ocurrio un error");
