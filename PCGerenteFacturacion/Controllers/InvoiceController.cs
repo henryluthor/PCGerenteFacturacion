@@ -26,11 +26,16 @@ namespace PCGerenteFacturacion.Controllers
         }
 
         //public string SaveInvoice(InvoiceHead invoiceHead)
-        public void SaveInvoice(InvoiceHeadModel invoiceHead)
+        public GenericResponse<bool> SaveInvoice(InvoiceHeadModel invoiceHead)
         {
             ViewData["Message"] = "Success";
             //return View("InvoiceHead");
             //return "Factura generada exitosamente";
+            return new GenericResponse<bool>
+            {
+                StatusCode = 200,
+                Message = "Factura generada exitosamente"
+            };
         }
 
         // GET: InvoiceController/Details/5

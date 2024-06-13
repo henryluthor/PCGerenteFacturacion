@@ -9,6 +9,7 @@
 
 @using (Html.BeginForm("SaveInvoice", "Invoice", FormMethod.Post))
 {
+    @* The following line shows the version of MVC *@
     @* <p>MVC version: @typeof(Controller).Assembly.GetName().Version.ToString()</p> *@
 
     @* @if(ViewData["Message"] == "Success")
@@ -47,7 +48,7 @@
     
 
     @* <button id="submitButton" class="btn btn-success" type="submit">Generar Factura</button> *@
-    <button id="submitButton" class="btn btn-success" type="button" onclick="makeSubmit()">Boton prueba submit V2</button>
+    <button id="submitButton" class="btn btn-success" type="button" onclick="makeSubmit()">Generar Factura</button>
 }
 
 <script>
@@ -123,7 +124,11 @@
             url: formUrl,
             data: formdata,
             success: function (response) {
-                alert("Factura generada exitosamente");
+                // alert("Factura generada exitosamente");
+                var x = 1;
+                // var genResp = new GenericResponse;
+                console.log(response);
+                alert(response.message);
             },
             error: function (xhr, status, error) {
                 alert("Ocurrio un error");
