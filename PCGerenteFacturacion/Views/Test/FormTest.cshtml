@@ -1,0 +1,62 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@model PCGerenteFacturacion.Models.PersonModel
+
+
+<p>ESTA ES LA VISTA PRINCIPAL</p>
+<p>THIS IS FORM TEST</p>
+
+
+@using(Html.BeginForm("FormSave", "Test", FormMethod.Post))
+{
+    @* @Html.Partial("/Views/Test/_FormProductTest.cshtml") *@
+    <partial name="_FormProductTest" />
+
+    @Html.LabelFor(model => model.Name)
+    @Html.EditorFor(model => model.Name)
+
+    @Html.LabelFor(model => model.Age)
+    @Html.EditorFor(model => model.Age)
+
+    @* @Html.LabelFor(model => model.Products)
+    @Html.EditorFor(model => model.Products) //this does not work *@
+
+    <div id="productTestList">
+
+    </div>
+
+    <button type="submit">Enviar</button>
+}
+
+<script>
+    var productListIndex = -1;
+
+    function AgregarProducto() 
+    {
+        var totalProductPrice = parseInt($('#Quantity').val()) * parseFloat($('#Price').val());
+        var rowWithData = '<tr><td>' + $('#ProductName').val() + '</td><td>' + $('#Quantity').val() + '</td><td>' + $('#Price').val() + '</td><td>' + totalProductPrice + '</td></tr>';
+        $('#invoicedetailtbody').append(rowWithData);
+
+        productListIndex++;
+
+        var productNameValue = $('#ProductName').val();
+        var inputHiddenProductNameToAppend = '<input type="text" id="Products[' + productListIndex + '].ProductName" name="Products[' + productListIndex + '].ProductName" value="' + productNameValue + '" />';
+
+        var productQuantityValue = parseInt($('#Quantity').val());
+        var inputHiddenProductQuantityToAppend = '<input type="number" id="Products[' + productListIndex + '].Quantity" name="Products[' + productListIndex + '].Quantity" value="' + productQuantityValue + '" />';
+
+        var productPriceValue = parseFloat($('#Price').val());
+        var inputHiddenProductPriceToAppend = '<input type="number" id="Products[' + productListIndex + '].Price" name="Products[' + productListIndex + '].Price" value="' + productPriceValue + '" />';
+        
+        $('#productTestList').append('<div>'
+            + inputHiddenProductNameToAppend
+            + inputHiddenProductQuantityToAppend
+            + inputHiddenProductPriceToAppend
+            + '</div>');
+
+    }
+</script>

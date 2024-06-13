@@ -1,0 +1,155 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@* @model PCGerenteFacturacion.DBModels.InvoiceHead *@
+@model PCGerenteFacturacion.Models.InvoiceHeadModel
+
+@using (Html.BeginForm("SaveInvoice", "Invoice", FormMethod.Post))
+{
+    @* <p>MVC version: @typeof(Controller).Assembly.GetName().Version.ToString()</p> *@
+
+    @* @if(ViewData["Message"] == "Success")
+    {
+        <div>SE GENERO FACTURA</div>
+    } *@
+
+    @* <div class="modal" id="successModal">
+        <div class="modal-content">
+            <p>Invoice submitted successfully</p>
+            <button id="printInvoiceBtn">Print invoice</button>
+        </div>
+    </div> *@
+
+    <partial name="_InvoiceDetail"></partial>
+
+    @* En este div se va a llenar el listado de productos del modelo *@
+    <div id="productList" style="background: red; display: none">
+
+    </div>
+
+    <div>
+        <label for="subtotalinput">Subtotal</label>
+        <input id="subtotalinput" type="number" readonly />
+    </div>
+
+    <div>
+        @Html.LabelFor(Model => Model.TaxTwelve)
+        @Html.EditorFor(Model => Model.TaxTwelve, new { htmlAttributes = new { type = "number", @readonly = "readonly" } })
+    </div>
+
+    <div>
+        @Html.LabelFor(Model => Model.Total)
+        @Html.EditorFor(Model => Model.Total, new { htmlAttributes = new { type = "number", @readonly = "readonly" } })
+    </div>
+    
+
+    @* <button id="submitButton" class="btn btn-success" type="submit">Generar Factura</button> *@
+    <button id="submitButton" class="btn btn-success" type="button" onclick="makeSubmit()">Boton prueba submit V2</button>
+}
+
+<script>
+
+    var productListIndex = -1;
+
+    var subtotaltemp = 0;
+    var subtotal = 0;
+
+    var taxtwelvetemp = 0;
+    var taxTwelve = 0;
+
+    var total = 0;
+    
+
+    function AgregarProducto()
+    {        
+        console.log("productListIndex:");
+        console.log(productListIndex);
+
+        var precioTotal = parseInt($('#Quantity').val()) * parseFloat($('#Price').val());
+        var rowToAppend = '<tr><td>' + $('#ProductName').val() + '</td><td>' + $('#Quantity').val() + '</td><td>' + $('#Price').val() + '</td><td>' + precioTotal + '</td></tr>';
+        $('#invoicedetailtbody').append(rowToAppend);
+
+        productListIndex++;
+        console.log("productListIndex:");
+        console.log(productListIndex);
+
+        var productNameValue = $('#ProductName').val();
+        var inputHiddenProductNameToAppend = '<input id="Products[' + productListIndex + '].Productname" name="Products[' + productListIndex + '].ProductName" value="' + productNameValue + '" />';
+        
+        var quantityValue = parseInt($('#Quantity').val());
+        var inputHiddenQuantityToAppend = '<input id="Products[' + productListIndex + '].Quantity" name="Products[' + productListIndex + '].Quantity" value="' + quantityValue + '" />';
+
+        var priceValue = $('#Price').val();
+        var inputHiddenPriceToAppend = '<input id="Products[' + productListIndex + '].Price" name="Products[' + productListIndex + '].Price" value="' + priceValue + '" />';
+
+        var inputHiddenToAppend = '<div>' 
+        + inputHiddenProductNameToAppend 
+        + inputHiddenQuantityToAppend 
+        + inputHiddenPriceToAppend 
+        +'</div>';
+        $('#productList').append(inputHiddenToAppend);
+
+        subtotaltemp = precioTotal;
+        subtotal += subtotaltemp;        
+        $('#subtotalinput').val(subtotal);
+
+        taxtwelvetemp = subtotaltemp * 0.12;
+        taxTwelve += taxtwelvetemp;
+        console.log("tipodetaxtwelve:");
+        console.log(typeof(taxTwelve));
+
+        $('#TaxTwelve').val(taxTwelve);
+        console.log("tipoinputtaxtwelve:");
+        // console.log(typeof($('#TaxTwelve').text()));
+        console.log(typeof ($('#TaxTwelve').val()));
+
+        total = subtotal + taxTwelve;
+        $('#Total').val(total);
+        
+    }
+
+
+    function makeSubmit()
+    {
+        var form = $('#submitButton').closest('form');
+        var formdata = form.serialize();
+        var formUrl = form.attr('action');
+
+        $.ajax({
+            method: 'POST',
+            url: formUrl,
+            data: formdata,
+            success: function (response) {
+                alert("Factura generada exitosamente");
+            },
+            error: function (xhr, status, error) {
+                alert("Ocurrio un error");
+            }
+        });
+    }
+
+    // $('#submitButton').click(function (event) {
+    //     event.preventDefault();
+
+    //     var form = $('#submitButton').closest('form');
+    //     var formdata = form.serialize();
+    //     var formUrl = form.attr('action');
+
+    //     $.ajax({
+    //         data: formdata,
+    //         url: formUrl,
+    //         method: 'POST',
+    //         success: function (response) {
+    //             alert("Factura generada exitosamente");
+    //         },
+    //         error: function (xhr, status, error) {
+    //             alert("Ocurrio un error");
+    //         }
+    //     });
+    // });
+
+
+</script>
