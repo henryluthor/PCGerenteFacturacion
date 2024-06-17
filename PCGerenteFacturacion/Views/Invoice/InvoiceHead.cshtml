@@ -4,6 +4,8 @@
 @{
 }
 
+@* Problema - Al hacer submit el controlador recibe numeros como string *@
+
 @* @model PCGerenteFacturacion.DBModels.InvoiceHead *@
 @model PCGerenteFacturacion.Models.InvoiceHeadModel
 
@@ -12,16 +14,15 @@
     @* The following line shows the version of MVC *@
     @* <p>MVC version: @typeof(Controller).Assembly.GetName().Version.ToString()</p> *@
 
-    @* @if(ViewData["Message"] == "Success")
-    {
-        <div>SE GENERO FACTURA</div>
-    } *@
 
-    <div class="modal" id="responseModal" tabindex="-1" role="dialog" aria-labelledby="responseModal" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+    <div class="modal" id="responseModal" tabindex="-1">
+        <div class="modal-dialog">
             <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
+                </div>
                 <div class="modal-body">
-                    <p>Invoice submitted successfully</p>
+                    <p id="responseMessage"></p>
                     <button id="printInvoiceBtn">Print invoice</button>
                 </div>                
             </div>
@@ -51,7 +52,7 @@
     </div>
     
 
-    @* <button id="submitButton" class="btn btn-success" type="submit">Generar Factura</button> *@
+    <button id="submitButtonPrime" class="btn btn-success" type="submit">Generar Factura (Prime)</button>
     <button id="submitButton" class="btn btn-success" type="button" onclick="makeSubmit()">Generar Factura</button>
 }
 
@@ -69,17 +70,17 @@
     
 
     function AgregarProducto()
-    {        
-        console.log("productListIndex:");
-        console.log(productListIndex);
+    {
+        //bootstrap.Tooltip.VERSION me da la version de Bootstrap
+        // console.log("Bootstrap version:");
+        // console.log(bootstrap.Tooltip.VERSION);
 
+        
         var precioTotal = parseInt($('#Quantity').val()) * parseFloat($('#Price').val());
         var rowToAppend = '<tr><td>' + $('#ProductName').val() + '</td><td>' + $('#Quantity').val() + '</td><td>' + $('#Price').val() + '</td><td>' + precioTotal + '</td></tr>';
         $('#invoicedetailtbody').append(rowToAppend);
 
         productListIndex++;
-        console.log("productListIndex:");
-        console.log(productListIndex);
 
         var productNameValue = $('#ProductName').val();
         var inputHiddenProductNameToAppend = '<input id="Products[' + productListIndex + '].Productname" name="Products[' + productListIndex + '].ProductName" value="' + productNameValue + '" />';
@@ -103,13 +104,13 @@
 
         taxtwelvetemp = subtotaltemp * 0.12;
         taxTwelve += taxtwelvetemp;
-        console.log("tipodetaxtwelve:");
-        console.log(typeof(taxTwelve));
+        // console.log("tipodetaxtwelve:");
+        // console.log(typeof(taxTwelve)); //number
 
         $('#TaxTwelve').val(taxTwelve);
-        console.log("tipoinputtaxtwelve:");
-        // console.log(typeof($('#TaxTwelve').text()));
-        console.log(typeof ($('#TaxTwelve').val()));
+        // console.log("tipoinputtaxtwelve:");
+        // console.log(typeof($('#TaxTwelve').text())); //works the same as the line below
+        // console.log(typeof ($('#TaxTwelve').val())); //string
 
         total = subtotal + taxTwelve;
         $('#Total').val(total);
@@ -123,18 +124,28 @@
         var formdata = form.serialize();
         var formUrl = form.attr('action');
 
+        // console.log("formdata:");
+        // console.log(formdata);
+
+        console.log("Tax twelve:");
+        console.log($('#TaxTwelve').val());
+        console.log("Tipo de TaxTwelve:");
+        console.log(typeof ($('#TaxTwelve').val()))
+        console.log("multiplicacion");
+        console.log($('#TaxTwelve').val() * 2);
+
         $.ajax({
             method: 'POST',
             url: formUrl,
             data: formdata,
             success: function (response) {
-                // alert("Factura generada exitosamente");
-                var x = 1;
-                // var genResp = new GenericResponse;
                 console.log(response);
-                // alert(response.message);
-                // $('#responseModal').modal('show');
-                $('#responseModal').modal('toggle');
+                console.log(response.message)
+
+                // $('#responseMessage').text(response.message);
+                $('#responseMessage').text(response.data);
+                // $('#responseModal').modal('toggle');
+                $('#responseModal').modal('show');
             },
             error: function (xhr, status, error) {
                 alert("Ocurrio un error");

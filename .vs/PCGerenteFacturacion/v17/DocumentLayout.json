@@ -11,16 +11,12 @@
       "RelativeMoniker": "D:0:0:{D3AF11AE-D766-4C1F-8D7F-2083B0CDBA62}|PCGerenteFacturacion\\PCGerenteFacturacion.csproj|solutionrelative:pcgerentefacturacion\\controllers\\invoicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D3AF11AE-D766-4C1F-8D7F-2083B0CDBA62}|PCGerenteFacturacion\\PCGerenteFacturacion.csproj|c:\\users\\hp\\source\\repos\\pcgerentefacturacion\\pcgerentefacturacion\\views\\invoice\\_invoicedetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D3AF11AE-D766-4C1F-8D7F-2083B0CDBA62}|PCGerenteFacturacion\\PCGerenteFacturacion.csproj|solutionrelative:pcgerentefacturacion\\views\\invoice\\_invoicedetail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{D3AF11AE-D766-4C1F-8D7F-2083B0CDBA62}|PCGerenteFacturacion\\PCGerenteFacturacion.csproj|c:\\users\\hp\\source\\repos\\pcgerentefacturacion\\pcgerentefacturacion\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D3AF11AE-D766-4C1F-8D7F-2083B0CDBA62}|PCGerenteFacturacion\\PCGerenteFacturacion.csproj|solutionrelative:pcgerentefacturacion\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D3AF11AE-D766-4C1F-8D7F-2083B0CDBA62}|PCGerenteFacturacion\\PCGerenteFacturacion.csproj|c:\\users\\hp\\source\\repos\\pcgerentefacturacion\\pcgerentefacturacion\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D3AF11AE-D766-4C1F-8D7F-2083B0CDBA62}|PCGerenteFacturacion\\PCGerenteFacturacion.csproj|solutionrelative:pcgerentefacturacion\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D3AF11AE-D766-4C1F-8D7F-2083B0CDBA62}|PCGerenteFacturacion\\PCGerenteFacturacion.csproj|c:\\users\\hp\\source\\repos\\pcgerentefacturacion\\pcgerentefacturacion\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D3AF11AE-D766-4C1F-8D7F-2083B0CDBA62}|PCGerenteFacturacion\\PCGerenteFacturacion.csproj|solutionrelative:pcgerentefacturacion\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -39,14 +35,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "_InvoiceDetail.cshtml",
-              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\PCGerenteFacturacion\\PCGerenteFacturacion\\Views\\Invoice\\_InvoiceDetail.cshtml",
-              "RelativeDocumentMoniker": "PCGerenteFacturacion\\Views\\Invoice\\_InvoiceDetail.cshtml",
-              "ToolTip": "C:\\Users\\hp\\source\\repos\\PCGerenteFacturacion\\PCGerenteFacturacion\\Views\\Invoice\\_InvoiceDetail.cshtml",
-              "RelativeToolTip": "PCGerenteFacturacion\\Views\\Invoice\\_InvoiceDetail.cshtml",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABIAAAAsAAAA",
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\PCGerenteFacturacion\\PCGerenteFacturacion\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "PCGerenteFacturacion\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\PCGerenteFacturacion\\PCGerenteFacturacion\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "PCGerenteFacturacion\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-13T18:17:13.537Z"
+              "WhenOpened": "2024-06-16T20:26:09.313Z"
             },
             {
               "$type": "Document",
@@ -56,7 +52,7 @@
               "RelativeDocumentMoniker": "PCGerenteFacturacion\\Views\\Invoice\\InvoiceHead.cshtml",
               "ToolTip": "C:\\Users\\hp\\source\\repos\\PCGerenteFacturacion\\PCGerenteFacturacion\\Views\\Invoice\\InvoiceHead.cshtml",
               "RelativeToolTip": "PCGerenteFacturacion\\Views\\Invoice\\InvoiceHead.cshtml",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAA8AAAAFAAAA",
+              "ViewState": "AQIAACQAAAAAAAAAAAAAAC4AAAAKAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-24T20:04:54.511Z",
               "EditorCaption": ""
@@ -69,9 +65,10 @@
               "RelativeDocumentMoniker": "PCGerenteFacturacion\\Controllers\\InvoiceController.cs",
               "ToolTip": "C:\\Users\\hp\\source\\repos\\PCGerenteFacturacion\\PCGerenteFacturacion\\Controllers\\InvoiceController.cs",
               "RelativeToolTip": "PCGerenteFacturacion\\Controllers\\InvoiceController.cs",
-              "ViewState": "AQIAABcAAAAAAAAAAAAwwB0AAAAIAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAowBgAAAAnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-24T20:03:37.162Z"
+              "WhenOpened": "2024-05-24T20:03:37.162Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -84,18 +81,6 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-21T14:57:11.508Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\PCGerenteFacturacion\\PCGerenteFacturacion\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "PCGerenteFacturacion\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\hp\\source\\repos\\PCGerenteFacturacion\\PCGerenteFacturacion\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "PCGerenteFacturacion\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAAB8AAACDAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-21T14:48:39.886Z"
             }
           ]
         }

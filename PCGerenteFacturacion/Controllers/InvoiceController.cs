@@ -25,16 +25,15 @@ namespace PCGerenteFacturacion.Controllers
             return View("InvoiceHead");
         }
 
-        //public string SaveInvoice(InvoiceHead invoiceHead)
-        public GenericResponse<bool> SaveInvoice(InvoiceHeadModel invoiceHead)
+
+        public GenericResponse<float> SaveInvoice(InvoiceHeadModel invoiceHead)
         {
-            ViewData["Message"] = "Success";
-            //return View("InvoiceHead");
-            //return "Factura generada exitosamente";
-            return new GenericResponse<bool>
+            var messageToReturn = invoiceHead.TaxTwelve;
+            return new GenericResponse<float>
             {
                 StatusCode = 200,
-                Message = "Factura generada exitosamente"
+                Message = "Factura generada exitosamente",
+                Data = messageToReturn
             };
         }
 
