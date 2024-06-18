@@ -26,14 +26,43 @@ namespace PCGerenteFacturacion.Controllers
         }
 
 
-        public GenericResponse<float> SaveInvoice(InvoiceHeadModel invoiceHead)
+        public GenericResponse<InvoiceHeadModel> SaveInvoice(InvoiceHeadModel invoiceHead)
         {
+            List<InvoiceDetailModel> invoiceDetailModelList = new List<InvoiceDetailModel>();
+
+            InvoiceDetailModel invoiceDetailModel = new InvoiceDetailModel();
+            invoiceDetailModel = new InvoiceDetailModel
+            {
+                ProductName = "x",
+                Quantity = 1,
+                Price = 1
+            };
+
+            invoiceDetailModelList.Add(invoiceDetailModel);
+
+            invoiceDetailModel = new InvoiceDetailModel
+            {
+                ProductName = "y",
+                Quantity = 1,
+                Price = 2
+            };
+
+            invoiceDetailModelList.Add(invoiceDetailModel);
+
+            InvoiceHeadModel invoiceHeadModel = new InvoiceHeadModel
+            {
+                Subtotal = 3,
+                TaxTwelve = 0.36,
+                Total = 3.36,
+                Products = invoiceDetailModelList
+            };
+
             var messageToReturn = invoiceHead.TaxTwelve;
-            return new GenericResponse<float>
+            return new GenericResponse<InvoiceHeadModel>
             {
                 StatusCode = 200,
                 Message = "Factura generada exitosamente",
-                Data = messageToReturn
+                Data = invoiceHeadModel
             };
         }
 

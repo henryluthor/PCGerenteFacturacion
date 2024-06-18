@@ -11,6 +11,14 @@
       "RelativeMoniker": "D:0:0:{D3AF11AE-D766-4C1F-8D7F-2083B0CDBA62}|PCGerenteFacturacion\\PCGerenteFacturacion.csproj|solutionrelative:pcgerentefacturacion\\controllers\\invoicecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{D3AF11AE-D766-4C1F-8D7F-2083B0CDBA62}|PCGerenteFacturacion\\PCGerenteFacturacion.csproj|c:\\users\\hp\\source\\repos\\pcgerentefacturacion\\pcgerentefacturacion\\repository\\invoicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3AF11AE-D766-4C1F-8D7F-2083B0CDBA62}|PCGerenteFacturacion\\PCGerenteFacturacion.csproj|solutionrelative:pcgerentefacturacion\\repository\\invoicerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D3AF11AE-D766-4C1F-8D7F-2083B0CDBA62}|PCGerenteFacturacion\\PCGerenteFacturacion.csproj|c:\\users\\hp\\source\\repos\\pcgerentefacturacion\\pcgerentefacturacion\\bll\\invoicebll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D3AF11AE-D766-4C1F-8D7F-2083B0CDBA62}|PCGerenteFacturacion\\PCGerenteFacturacion.csproj|solutionrelative:pcgerentefacturacion\\bll\\invoicebll.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{D3AF11AE-D766-4C1F-8D7F-2083B0CDBA62}|PCGerenteFacturacion\\PCGerenteFacturacion.csproj|c:\\users\\hp\\source\\repos\\pcgerentefacturacion\\pcgerentefacturacion\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D3AF11AE-D766-4C1F-8D7F-2083B0CDBA62}|PCGerenteFacturacion\\PCGerenteFacturacion.csproj|solutionrelative:pcgerentefacturacion\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -26,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -35,6 +43,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "InvoiceRepository.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\PCGerenteFacturacion\\PCGerenteFacturacion\\Repository\\InvoiceRepository.cs",
+              "RelativeDocumentMoniker": "PCGerenteFacturacion\\Repository\\InvoiceRepository.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\PCGerenteFacturacion\\PCGerenteFacturacion\\Repository\\InvoiceRepository.cs",
+              "RelativeToolTip": "PCGerenteFacturacion\\Repository\\InvoiceRepository.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAgwCsAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T16:19:28.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "InvoiceBll.cs",
+              "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\PCGerenteFacturacion\\PCGerenteFacturacion\\Bll\\InvoiceBll.cs",
+              "RelativeDocumentMoniker": "PCGerenteFacturacion\\Bll\\InvoiceBll.cs",
+              "ToolTip": "C:\\Users\\hp\\source\\repos\\PCGerenteFacturacion\\PCGerenteFacturacion\\Bll\\InvoiceBll.cs",
+              "RelativeToolTip": "PCGerenteFacturacion\\Bll\\InvoiceBll.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAA1wEEAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-18T16:10:35.684Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\PCGerenteFacturacion\\PCGerenteFacturacion\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "PCGerenteFacturacion\\Views\\Shared\\_Layout.cshtml",
@@ -52,7 +86,7 @@
               "RelativeDocumentMoniker": "PCGerenteFacturacion\\Views\\Invoice\\InvoiceHead.cshtml",
               "ToolTip": "C:\\Users\\hp\\source\\repos\\PCGerenteFacturacion\\PCGerenteFacturacion\\Views\\Invoice\\InvoiceHead.cshtml",
               "RelativeToolTip": "PCGerenteFacturacion\\Views\\Invoice\\InvoiceHead.cshtml",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAAC4AAAAKAAAA",
+              "ViewState": "AQIAADkAAAAAAAAAAAAAAEEAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-05-24T20:04:54.511Z",
               "EditorCaption": ""
@@ -65,14 +99,14 @@
               "RelativeDocumentMoniker": "PCGerenteFacturacion\\Controllers\\InvoiceController.cs",
               "ToolTip": "C:\\Users\\hp\\source\\repos\\PCGerenteFacturacion\\PCGerenteFacturacion\\Controllers\\InvoiceController.cs",
               "RelativeToolTip": "PCGerenteFacturacion\\Controllers\\InvoiceController.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAowBgAAAAnAAAA",
+              "ViewState": "AQIAACMAAAAAAAAAAAAIwDEAAAAzAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-24T20:03:37.162Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\hp\\source\\repos\\PCGerenteFacturacion\\PCGerenteFacturacion\\Program.cs",
               "RelativeDocumentMoniker": "PCGerenteFacturacion\\Program.cs",

@@ -22,7 +22,23 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="close"></button>
                 </div>
                 <div class="modal-body">
-                    <p id="responseMessage"></p>
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Producto</th>
+                                <th>Cantidad</th>
+                                <th>Precio Unitario</th>
+                                <th>Precio Final</th>
+                            </tr>
+                        </thead>
+                        <tbody id="responseDetailTBody">
+
+                        </tbody>
+                    </table>
+
+                    <p id="pSubtotal"></p>
+                    <p id="pTaxTwelve"></p>
+                    <p id="pTotal"></p>
                     <button id="printInvoiceBtn">Print invoice</button>
                 </div>                
             </div>
@@ -52,7 +68,7 @@
     </div>
     
 
-    <button id="submitButtonPrime" class="btn btn-success" type="submit">Generar Factura (Prime)</button>
+    @* <button id="submitButtonPrime" class="btn btn-success" type="submit">Generar Factura (Prime)</button> *@
     <button id="submitButton" class="btn btn-success" type="button" onclick="makeSubmit()">Generar Factura</button>
 }
 
@@ -77,7 +93,7 @@
 
         
         var precioTotal = parseInt($('#Quantity').val()) * parseFloat($('#Price').val());
-        var rowToAppend = '<tr><td>' + $('#ProductName').val() + '</td><td>' + $('#Quantity').val() + '</td><td>' + $('#Price').val() + '</td><td>' + precioTotal + '</td></tr>';
+        var rowToAppend = '<tr><td>' + $('#ProductName').val() + '</td><td>' + $('#Quantity').val() + '</td><td>$' + $('#Price').val() + '</td><td>$' + precioTotal + '</td></tr>';
         $('#invoicedetailtbody').append(rowToAppend);
 
         productListIndex++;
@@ -140,11 +156,29 @@
             data: formdata,
             success: function (response) {
                 console.log(response);
-                console.log(response.message)
 
-                // $('#responseMessage').text(response.message);
-                $('#responseMessage').text(response.data);
-                // $('#responseModal').modal('toggle');
+                $.each(response.data.products, function (index, product) {
+                    // alert(index + ": " + product.productName);
+                    var tdProductName = '<td>' + product.productName + '</td>';
+                    var tdProductQuantity = '<td>' + product.quantity + '</td>';
+                    var tdProductPrice = '<td>$' + product.price + '</td>';
+                    var productFinalPrice = product.quantity * product.price;
+                    var tdProductFinalPrice = '<td>$' + productFinalPrice + '</td>';
+
+                    var rowToAppend = '<tr>'
+                    + tdProductName
+                    + tdProductQuantity
+                    + tdProductPrice
+                    + tdProductFinalPrice
+                    + '</tr>'
+                    $('#responseDetailTBody').append(rowToAppend)
+                });
+
+                $('#pSubtotal').text('Subtotal: $' + response.data.subtotal);
+                $('#pTaxTwelve').text('IVA 12%: $' + response.data.taxTwelve);
+                $('#pTotal').text('Total: $' + response.data.total);
+
+                // $('#responseModal').modal('toggle'); //works the same as the line below
                 $('#responseModal').modal('show');
             },
             error: function (xhr, status, error) {
